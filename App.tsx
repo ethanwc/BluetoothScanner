@@ -18,6 +18,8 @@ import {
   StatusBar,
 } from 'react-native';
 
+import {BleManager, Device } from 'react-native-ble-plx';
+
 import {
   Header,
   LearnMoreLinks,
@@ -29,6 +31,14 @@ import {
 declare var global: {HermesInternal: null | {}};
 
 const App = () => {
+  
+  const manager: BleManager = new BleManager();
+
+  manager.startDeviceScan(
+    UUIDs: null,
+    options: ?ScanOptions,
+    listener: (error: ?Error, scannedDevice: ?Device) => void
+  )
   return (
     <>
       <StatusBar barStyle="dark-content" />
